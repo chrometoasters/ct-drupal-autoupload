@@ -1,0 +1,31 @@
+{
+  "name": "ct-drupal-autoupload",
+  "description": "A fancy file picker, which adds a skin and keyboard accessibility to the https://www.drupal.org/project/autoupload module.",
+  "version": "1.0.0",
+  "main": "dist",
+  "license": "All rights reserved",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "keywords": [],
+  "authors": [
+    {
+      "name": "Dan Smith",
+      "email": "dan.smith@chrometoaster.com"
+    }
+  ],
+  "homepage": "http://github.com/chrometoasters/ct-drupal-autoupload",
+  "repository": {
+    "type": "github",
+    "url": "http://github.com/chrometoasters/ct-drupal-autoupload.git"
+  },
+  "dependencies": {
+    "jquery": "1.7.1"
+  },
+  "devDependencies": {
+    "autoupload": "git://git.drupal.org/project/autoupload.git#16772e6dee12be85ff0cbf626c77690d301dd902"
+  },
+  "private": true
+}

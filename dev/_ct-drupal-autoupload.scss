@@ -1,0 +1,154 @@
+/*
+Drupal form image uploader
+
+Styleguide n.nn
+*/
+
+%ct-drupal-autoupload {
+
+    .js & {
+        //.image-widget {
+        //  .file-upload-js-error {}
+        //}
+
+        .image-widget-data {
+
+            position: relative;
+            width: 398px;
+            height: 40px;
+
+            // Hidden real file input
+            input[type="file"] {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                cursor: pointer;
+
+                // http://jsfiddle.net/chrometoaster/2zzGF/
+                font-size: 100px;
+                width: 100%;
+                height: 100%;
+                @include opacity(0);
+                filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+                filter: alpha(opacity=0);
+                -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            }
+
+            // Fake upload button,
+            &:before {
+                content: "Select image for upload";
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+
+                width: 161px;
+                height: 38px;
+                overflow: hidden;
+
+                @extend %mw-heading4 !optional;
+                background: map-get($mw-color, link);
+                color: #fff !important;
+                line-height: 41px !important;
+                text-align: center;
+                padding: 0;
+                border: 1px solid map-get($mw-color, link);
+                @include border-radius(0);
+            }
+
+            &:hover,
+            &:focus,
+            &.focus {
+                &:before {
+                    background-color: map-get($mw-color, active);
+                    border-color: map-get($mw-color, active);
+                }
+            }
+
+            // Fake textfield
+            > span.file,
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 1;
+
+                width: 237px;
+                height: 38px;
+                overflow: hidden;
+
+                background: #fafafa;
+                color: #666;
+                font-size: 14px;
+                text-align: center;
+                border: 1px solid #e7e7e7;
+                border-left: 0;
+            }
+
+            > span.file {
+                > .file-icon {
+                    display: none;
+                }
+
+                > a {
+                    line-height: 38px;
+                    color: #000;
+                    cursor: default;
+                }
+            }
+
+            // Uploaded file size
+
+            > span.file-size {
+                display: none;
+            }
+
+            // Remove button
+            > input[value="Remove"] {
+                position: absolute;
+                top: 0;
+                left: (398px + 10px);
+
+                background: none;
+                color: #525252;
+                font-size: 11px;
+                line-height: 38px;
+                padding: 0;
+                border: 0;
+
+                &:hover,
+                &:focus {
+                    color: map-get($mw-color, link_over);
+                }
+            }
+        }
+
+        // Uploaded image
+        div.image-preview {
+            float: none;
+            margin-bottom: 20px;
+
+            > img {
+                @extend %mw-img-polaroid !optional;
+            }
+
+            + .image-widget-data {
+
+                // Fake upload button
+                &:before,
+                &:hover:before,
+                &:focus:before {
+                    background-color: #999; // faux disabled
+                    border-color: #999; // faux disabled
+                }
+
+                // Fake textfield
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
