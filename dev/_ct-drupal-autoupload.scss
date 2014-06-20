@@ -1,6 +1,52 @@
 /*
 Drupal form image uploader
 
+Pre autoupload module:
+
+<html class="no-js">
+    <body>
+        <div class="managed_file-input form-col form-item form-element" id="edit-field-event-image-und-0-wrapper">
+            <label for="edit-field-event-image-und-0">Upload your event image (optional): </label>
+            <div class="image-widget form-managed-file clearfix">
+                <div class="image-widget-data">
+                    <input type="file" id="edit-field-event-image-und-0-upload" name="files[field_event_image_und_0]" size="22" class="form-file">
+                    <input type="submit" id="edit-field-event-image-und-0-upload-button" name="field_event_image_und_0_upload_button" value="Upload" class="form-submit">
+                    <input type="hidden" name="field_event_image[und][0][fid]" value="0">
+                    <input type="hidden" name="field_event_image[und][0][display]" value="1">
+                </div>
+            </div>
+            <div class="form-description" id="description-for-edit-field-event-image-und-0">
+                <p class="description">
+                    <small>This image will appear with your event on the Event page.<br>
+                    Files must be less than <strong>4 MB</strong>.<br>
+                    Allowed file types: <strong>png gif jpg jpeg</strong>.</small>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+Post autoupload module:
+
+<html class="js">
+    <head>
+        <style media="all" type="text/css">
+            .image-widget-data input.upload,
+            div.form-managed-file input.form-submit[value=Upload],
+            #media-add-upload #edit-submit,
+            #media-tab-library a.button-yes {
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- As above -->
+    </body>
+</html>
+
+
+
 Styleguide n.nn
 */
 
