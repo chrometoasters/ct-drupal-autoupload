@@ -21,7 +21,13 @@ Note: by default Bower installs packages to `bower_components`. If you wish to c
 
 ### When JavaScript is enabled
 
-* the Drupal module removes the Upload button, so that choosing a file also triggers an upload of that file via Ajax
+The Drupal module:
+
+* adds a style block to the header, which hides the Upload button
+* changes the 2-step pick-then-upload behaviour to 1 step, so that picking a file also triggers an upload of that file via Ajax
+
+We:
+
 * we restyle the UI to match the design (IE9+)
 * we add keyboard focus support
 
@@ -29,7 +35,6 @@ Note: by default Bower installs packages to `bower_components`. If you wish to c
 
 * the standard Upload button is shown
 * we do not restyle the UI as we cannot add the keyboard focus support
-
 
 ## Configuration:
 
