@@ -8,6 +8,7 @@
 
 # Require gems and Compass plugins
 require "compass"
+require "breakpoint"
 
 # General
 output_style = :compressed

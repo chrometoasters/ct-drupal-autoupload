@@ -45,10 +45,21 @@ Post autoupload module:
     </body>
 </html>
 
-
-
 Styleguide n.nn
 */
+
+$ct-drupal-autoupload-breakpoint: (
+    lt-tablet-landscape: (max-width: 767px)
+);
+
+$ct-drupal-autoupload-color: (
+    active: #ec008c, // pink
+    highlight: #fff32a, // yellow
+    link: #009fda, // blue
+    link_over: #027ab6, // darker blue
+    intro: #a4a4a4, // light grey
+    heading: #2a2a2a // grey
+);
 
 %ct-drupal-autoupload {
 
@@ -62,6 +73,10 @@ Styleguide n.nn
             position: relative;
             width: 398px;
             height: 40px;
+
+            @include breakpoint( map-get($ct-drupal-autoupload-breakpoint, lt-tablet-landscape ) ) {
+                width: (398px - 178px);
+            }
 
             // Hidden real file input
             input[type="file"] {
@@ -89,17 +104,21 @@ Styleguide n.nn
                 left: 0;
                 z-index: 1;
 
-                width: 161px;
+                width: 40%;
                 height: 38px;
                 overflow: hidden;
 
+                @include breakpoint( map-get($ct-drupal-autoupload-breakpoint, lt-tablet-landscape ) ) {
+                    content: "Select";
+                }
+
                 @extend %mw-heading4 !optional;
-                background: map-get($mw-color, link);
+                background: map-get($ct-drupal-autoupload-color, link);
                 color: #fff !important;
                 line-height: 41px !important;
                 text-align: center;
                 padding: 0;
-                border: 1px solid map-get($mw-color, link);
+                border: 1px solid map-get($ct-drupal-autoupload-color, link);
                 @include border-radius(0);
             }
 
@@ -107,8 +126,8 @@ Styleguide n.nn
             &:focus,
             &.focus {
                 &:before {
-                    background-color: map-get($mw-color, active);
-                    border-color: map-get($mw-color, active);
+                    background-color: map-get($ct-drupal-autoupload-color, active);
+                    border-color: map-get($ct-drupal-autoupload-color, active);
                 }
             }
 
@@ -121,7 +140,7 @@ Styleguide n.nn
                 right: 0;
                 z-index: 1;
 
-                width: 237px;
+                width: 60%;
                 height: 38px;
                 overflow: hidden;
 
@@ -157,6 +176,10 @@ Styleguide n.nn
                 top: 0;
                 left: (398px + 10px);
 
+                @include breakpoint( map-get($ct-drupal-autoupload-breakpoint, lt-tablet-landscape ) ) {
+                    left: (398px - 178px + 10px);
+                }
+
                 background: none;
                 color: #525252;
                 font-size: 11px;
@@ -166,7 +189,7 @@ Styleguide n.nn
 
                 &:hover,
                 &:focus {
-                    color: map-get($mw-color, link_over);
+                    color: map-get($ct-drupal-autoupload-color, link_over);
                 }
             }
         }
