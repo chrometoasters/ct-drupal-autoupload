@@ -9,7 +9,7 @@ __Please note: this plugin is optimised for internal Chrometoaster use. YMMV.__
 ## Installation
 
     cd /PATH/TO/PROJECT-THEME-FOLDER
-    bower install https://github.com/chrometoasters/ct-drupal-autoupload.git#v1.0.2 --save
+    bower install https://github.com/chrometoasters/ct-drupal-autoupload.git#v1.1.0 --save
 
 Note: by default Bower installs packages to `bower_components`. If you wish to customise this location please add a `.bowerrc` file into this folder:
 
