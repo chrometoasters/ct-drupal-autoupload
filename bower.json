@@ -1,7 +1,7 @@
 {
   "name": "ct-drupal-autoupload",
   "description": "A fancy file picker, which adds a skin and keyboard accessibility to the https://www.drupal.org/project/autoupload module.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "main": "dist",
   "license": "All rights reserved",
   "ignore": [
